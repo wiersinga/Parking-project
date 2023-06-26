@@ -39,10 +39,10 @@ const ReturnTicket = () => {
         setInputText(e.target.value);
     };
 
-    return <div className="Return-container">
-         <div className="exit border border-5 mb-2">
+    return <div className="Return-container border border-5 mb-2">
+         <div className="exit">
                 <span className="input-group-number"> Enter your place number and press Exit </span>
-                <input type="number" onChange={handleChange} value={inputNumber} />                
+                <input type="number" onChange={handleChange} name="myInput" value={inputNumber} />                
                 <button onClick={buttonHandler} type="button" className="btn btn-primary">Exit</button>
                 <span id="thanksText" style={{display:"none"}}> Thank you for coming :) See you soon !! </span>
                 <span id="invalidText" style={{display:"none"}}> Invalid Ticket !</span>

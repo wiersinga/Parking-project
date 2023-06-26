@@ -9,7 +9,7 @@ export class ParkingService {
     constructor(@InjectRepository(ParkingEntity) private parkingRepository: Repository<ParkingEntity>) { }
 
     async status(): Promise<ParkingEntity[]> {        
-        return await this.parkingRepository.find();
+        return await this.parkingRepository.find();        
     }
 
     async enter(): Promise<number> {

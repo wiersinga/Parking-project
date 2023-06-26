@@ -40,8 +40,8 @@ const GetTicket = () => {
             <Card id="ticket" style={{ display: "none", width: '18rem' }}>
                 <Card.Img variant="top" src="https://static.vecteezy.com/system/resources/previews/005/720/226/original/blue-parking-sign-illustration-isolated-on-white-background-free-vector.jpg" />
                 <Card.Text>
-                    <h3>Le numéro de votre place est:</h3>
-                    <h3>{newPlaceNum}</h3>
+                    <span style={{fontWeight:"bolder"}}>Le numéro de votre place est : </span>
+                    <span style={{fontWeight:"bolder"}}> {newPlaceNum} </span>
                 </Card.Text>
                 <Card.Body>
                     <Card.Title>Parking de la ville</Card.Title>

@@ -15,10 +15,10 @@ code {
 h1 {
   display: flex;
   justify-content: center;
-  color: rgb(21, 47, 195);
+  color: rgb(255, 255, 255);
 }
 .title-container{
-  background-color: rgb(133, 200, 226);
+  background-color: #04AA6D;
 }
  .get-container {
   margin-top :200px;
@@ -38,8 +38,22 @@ h4 {
   color: rgb(19, 13, 107);
 }
 .title-container {
-  color: blue;
+  color: rgb(255, 255, 255);
 }
-card {
-  
+.Return-container {
+  background-color: rgb(133, 200, 226);
+  width: 600px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position:absolute;  
+  padding-top: 20px;
+  margin-top :200px;
 }
+input[name="myInput"]{
+  width: 50px;
+}
+
+
+
+
