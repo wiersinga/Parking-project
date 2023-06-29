@@ -7,11 +7,6 @@ import { log } from 'console';
 export class ParkingController {
     constructor(private parkingService: ParkingService) { }
 
-    @Get('status')
-    async getParkingStatus(): Promise<ParkingEntity[]> {
-        return await this.parkingService.status();
-    } 
-
     @Get('enter')
     async getTicket(): Promise<number> {
         return await this.parkingService.enter();
@@ -21,4 +16,8 @@ export class ParkingController {
     async payTicket(@Param() params: any) :Promise<boolean> {        
         return await this.parkingService.exit(params.id);
     } 
+    @Get('status')
+    async getParkingStatus(): Promise<ParkingEntity[]> {
+        return await this.parkingService.status();
+    }
 }

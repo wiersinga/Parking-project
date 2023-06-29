@@ -8,10 +8,6 @@ import { ParkingEntity } from '../parking.entity';
 export class ParkingService {
     constructor(@InjectRepository(ParkingEntity) private parkingRepository: Repository<ParkingEntity>) { }
 
-    async status(): Promise<ParkingEntity[]> {        
-        return await this.parkingRepository.find();        
-    }
-
     async enter(): Promise<number> {
 
         var freePlace = await this.parkingRepository.findOneBy({ busy: false });  
@@ -28,16 +24,20 @@ export class ParkingService {
 
     async exit(placeNm: number): Promise<boolean> {
         
-        var freePlace = await this.parkingRepository.findOneBy({ id: placeNm });
+        var place = await this.parkingRepository.findOneBy({ id: placeNm, busy:true});
         
-        if (freePlace == null) {    // parking number is wrong
+        if (place == null) {    // parking number is wrong
             return false;
         } else {
             
-            await this.parkingRepository.update(freePlace.id, {
+            await this.parkingRepository.update(place.id, {
                 busy: false
              });
             return true;
         }
-    }      
+    } 
+
+    async status(): Promise<ParkingEntity[]> {        
+        return await this.parkingRepository.find();        
+    }    
 }
